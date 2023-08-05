@@ -1,6 +1,6 @@
 describe('counter', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5500/');
+    cy.visit('http://localhost:8080/');
   });
 
   it('플러스 클릭시 count가 1 증가한다.', () => {
