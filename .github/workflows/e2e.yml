@@ -19,7 +19,10 @@ jobs:
           node-version: 18.12.1
 
       - name: Install dependencies
-        run: npm install
+      - run: npm cache verify
+      - run: npm cache clean --force
+      - run: rm -rf package-lock.json
+      - run: npm install
 
       - name: run live-server
         run: npx live-server
