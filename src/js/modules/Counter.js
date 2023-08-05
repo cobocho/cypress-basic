@@ -11,8 +11,22 @@ export default function Counter({ $app }) {
         </div>`;
   };
 
+  const addEvent = () => {
+    const $count = $app.querySelector('.count-display');
+
+    $app.addEventListener('click', (e) => {
+      if (e.target.closest('.minus-button') && $count.value > 8) {
+        $count.value = Number($count.value) - 1;
+      }
+      if (e.target.closest('.plus-button') && $count.value < 12) {
+        $count.value = Number($count.value) + 1;
+      }
+    });
+  };
+
   const init = () => {
     render();
+    addEvent();
   };
 
   init();
